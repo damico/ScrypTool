@@ -26,9 +26,6 @@ public class Runtime {
 	public static AppProperties appProperties = null;
 
 	public static void main(String[] args) throws IOException, InvalidKeyException, NoSuchAlgorithmException, SignatureException {
-
-		
-
 		Logger rootLogger = Logger.getRootLogger();
 		rootLogger.setLevel(Level.INFO);
 		PatternLayout layout = new PatternLayout("%d{ISO8601} [%t] %-5p %c %x - %m%n");
@@ -139,8 +136,8 @@ public class Runtime {
 					break;
 
 				case 5:
-					signatureFilePath = args[5];
-					String signedFileFilePath =  args[4];
+					signatureFilePath = args[4];
+					String signedFileFilePath =  args[3];
 					Utils.getInstance().handleVerboseLog(appProperties, 'i', Constants.OPER_5);
 					Certificate cert = pki.getCertificateByFile(srcFilePath);
 					String strB64File = Utils.getInstance().readFile(new File(signatureFilePath));

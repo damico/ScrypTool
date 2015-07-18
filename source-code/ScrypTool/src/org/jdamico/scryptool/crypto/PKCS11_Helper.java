@@ -554,6 +554,7 @@ public class PKCS11_Helper implements PkiGeneric {
 					buffer = new BufferedOutputStream(file);
 					output = new ObjectOutputStream(buffer);
 				    output.writeObject(cert);
+				    Utils.getInstance().handleVerboseLog(null, 'i', certFileLocation + " created!");
 				} catch (FileNotFoundException e) {
 					e.printStackTrace();
 				} catch (IOException e) {
