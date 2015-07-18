@@ -10,6 +10,8 @@ import org.jdamico.scryptool.entities.CertificationChainAndSignatureBase64;
 import org.jdamico.scryptool.entities.PrivateKeyAndCertChain;
 
 public interface PkiGeneric {
+	public void setCertificateByFile(String certFileLocation, String password, String keyStoreFileNameOrKeyStoreFileName) throws TopLevelException;
+	public Certificate getCertificateByFile(String srcFilePath) throws TopLevelException;
 	public String encodeX509CertChainToBase64(Certificate[] aCertificationChain) throws TopLevelException;
 	public PrivateKeyAndCertChain getPrivateKeyAndCertChain(KeyStore aKeyStore, String aKeyPassword) throws TopLevelException;
 	public KeyStore loadKeyStore(String aPKCS11LibraryFileNameOrKeyStoreFileName, String aSmartCardPIN) throws TopLevelException;

@@ -12,5 +12,14 @@ public interface Constants {
 	public static final String LOG_NAME = APP_NAME+".log";
 	public static final String LOG_FOLDER = "./";
 	public static final String LOG_FILE = LOG_FOLDER+LOG_NAME;
+	
+	public static final String BASIC_PARAMS = "<path-to-conf-file> <operation-number> <source-file>";
+	
+	public static final String OPER_0 =  "OPERATION 0: Sign using smart card. [Parameters: "+BASIC_PARAMS+" <smart-card-pin> ] In this case, <source-file> is the file to be signed.";
+	public static final String OPER_1 =  "OPERATION 1: Verify signature using smart card. [Parameters: "+BASIC_PARAMS+" <smart-card-pin> <path-to-base64-signature-file>] In this case, <source-file> is the file signed.";
+	public static final String OPER_2 =  "OPERATION 2: Encrypt using smart card. [Parameters: "+BASIC_PARAMS+" <smart-card-pin> ] In this case, <source-file> is the file to be encrypted.";
+	public static final String OPER_3 =  "OPERATION 3: Decrypt using smart card. [Parameters: "+BASIC_PARAMS+" <smart-card-pin> ] In this case, <source-file> is the file to be decrypted.";
+	public static final String OPER_4 =  "OPERATION 4: Get certificate from smart card and save to a file. [Parameters: "+BASIC_PARAMS+" <smart-card-pin> ] In this case, <source-file> is the file path where the certificate will be saved.";
+	public static final String OPER_5 =  "OPERATION 5: Verify signature using saved certificate. [Parameters: "+BASIC_PARAMS+" <path-to-file-signed> <path-to-base64-signature-file>] In this case, <source-file> is the file path where the certificate was saved.";
 
 }

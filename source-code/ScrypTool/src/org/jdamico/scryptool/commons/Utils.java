@@ -1,14 +1,15 @@
 package org.jdamico.scryptool.commons;
 
+import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
+import java.io.FileReader;
 import java.io.IOException;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-
 import org.jdamico.scryptool.entities.AppProperties;
 
 
@@ -45,6 +46,20 @@ public class Utils {
             fileStream.close();
         }
     }
+    
+	public String readFile( File file ) throws IOException {
+	    BufferedReader reader = new BufferedReader( new FileReader (file));
+	    String         line = null;
+	    StringBuilder  stringBuilder = new StringBuilder();
+	    String         ls = System.getProperty("line.separator");
+
+	    while( ( line = reader.readLine() ) != null ) {
+	        stringBuilder.append( line );
+	        stringBuilder.append( ls );
+	    }
+
+	    return stringBuilder.toString();
+	}
     
     public byte[] readFileInByteArray(File file) throws IOException {
 
